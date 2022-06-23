@@ -113,12 +113,13 @@ class facturasController extends Controller
     public function detalle(Request $req){
          $datos=$req->all();
          if(isset($datos['prod_id'])){
-
+             
              $prod_id=$datos['prod_id'];
              $prod=DB::select("select * from productos where prod_id=$prod_id");
              $prod=$prod[0];
-         }
-        
+            }
+            
+            
          $fac_id=$datos['fac_id'];
          if(empty($fac_id)){
             $productos=DB::select("SELECT * from productos");
@@ -132,7 +133,7 @@ class facturasController extends Controller
          if(isset($datos['btn_detalle'])=='btn_detalle'){
                 ///GUARDO EL DETALLE 
 
-                if(isset($datos['prod_id'])){
+                if(isset($datos['prod_id']) && isset($datos['fad_cantidad'])){
                     $datos['fad_vu']=$prod->prod_precio;
                     $datos['fad_vt']=$prod->prod_precio*$datos['fad_cantidad'];
                     $inv=DB::select("select * from inventario where prod_id=$prod->prod_id");
@@ -176,6 +177,15 @@ class facturasController extends Controller
 
 
 
+
+    }
+     
+    public function facturas_anular($fac_id){
+        facturas::where('fac_id', $fac_id)->update(array('fac_estado' => '2'));
+        $facturas=DB::select("select * from facturas");
+        return view('facturas.index')
+        ->with('facturas',$facturas)
+        ;
 
     }
 

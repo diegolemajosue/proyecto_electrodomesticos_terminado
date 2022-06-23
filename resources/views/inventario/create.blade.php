@@ -64,7 +64,7 @@
                         <div class="form-group row">
                             <label for="inv_cantidad" class="col-md-4 col-form-label text-md-right">Cantidad</label>
                             <div class="col-md-6">
-                                <input id="inv_cantidad" min="0" name="inv_cantidad" type="number"  class="form-control @error('inv_cantidad') is-invalid @enderror" name="inv_cantidad" value="{{ old('inv_cantidad') }}" required autocomplete="inv_cantidad">
+                                <input id="inv_cantidad" min="1" name="inv_cantidad" type="number"  class="form-control @error('inv_cantidad') is-invalid @enderror" name="inv_cantidad" value="{{ old('inv_cantidad') }}" required autocomplete="inv_cantidad">
                                 @error('inv_cantidad')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

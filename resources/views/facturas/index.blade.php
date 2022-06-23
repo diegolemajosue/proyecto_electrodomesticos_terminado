@@ -39,8 +39,13 @@
 				<td>{{$f->fac_fecha}}</td>
 				<td>{{$f->fac_nombre}}</td>
 				<td>
-					<a style="background:#46b6d0;" class="btn btn-primary" href="{{route('facturas.edit',$f->fac_id)}}">Editar</a>
-					<a href="{{route('facturas.pdf',$f->fac_id)}}" class= "btn text-white "  style="background:#eb0009;">PDF</a>
+				@if($f->fac_estado==1)
+				<a style="background:#46b6d0;" class="btn btn-primary" href="{{route('facturas.edit',$f->fac_id)}}">Editar</a>
+				<a href="{{route('facturas.pdf',$f->fac_id)}}" class= "btn text-white "  style="background:#eb0009;">PDF</a>
+				<a href="{{route('facturas.anular',$f->fac_id)}}" class= "btn text-white "  style="background:#ffA500;">X Anular</a>
+				@else
+				<a href="{{route('facturas.pdf',$f->fac_id)}}" class= "btn text-white "  style="background:#eb0009;">PDF</a>
+				@endif
 				</td>
 			</tr>
 			@endforeach

@@ -89,7 +89,7 @@
                             <?php
                             $inv_cantidad=$inventario->inv_cantidad;
                             ?>
-                            <input id="inv_cantidad" min="0" name="inv_cantidad"  type="number" value="0" name="inv_cantidad" type="number"  class="form-control @error('inv_cantidad') is-invalid @enderror" name="inv_cantidad" value="{{ old('inv_cantidad') }}" required autocomplete="inv_cantidad">
+                            <input id="inv_cantidad" min="1" name="inv_cantidad"  type="number" value="0" name="inv_cantidad" type="number"  class="form-control @error('inv_cantidad') is-invalid @enderror" name="inv_cantidad" value="{{ old('inv_cantidad') }}" required autocomplete="inv_cantidad">
                             @error('inv_cantidad')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

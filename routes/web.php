@@ -63,6 +63,7 @@ Route::post('/facturas_detalle','FacturasController@detalle')->name('facturas.de
 Route::resource('facturas','facturasController');
 
 Route::get('/factura_pdf/{fac_id}','FacturasController@facturas_pdf')->name('facturas.pdf');;
+Route::get('/factura_anular/{fac_id}','FacturasController@facturas_anular')->name('facturas.anular');;
 
 Route::get('/reporte','reporteController@index')->name('reporte');
 Route::post('/reporte/reporte','reporteController@reporte')->name('reporte.reporte');

@@ -3,7 +3,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-9">
-
+            @isset($msg)
+        
+            <h5 class="bg-danger">{{$msg}}</h5>
+            @endisset
 
             <div class="card" style="border: solid 1px black;">
                 <div class="card-header bg-dark">

@@ -30,7 +30,7 @@
                             <div class="form-group row">
                                 <label for="prod_precio" class="col-md-4 col-form-label text-md-right">Precio</label>
                                 <div class="col-md-6">
-                                <input type="number" class="form-control" min="0" value="{{$productos->prod_precio}}" name="prod_precio" id="prod_precio" class="form-control @error('prod_precio') is-invalid 
+                                <input type="number" class="form-control" min="1" step="0.001" value="{{$productos->prod_precio}}" name="prod_precio" id="prod_precio" class="form-control @error('prod_precio') is-invalid 
                                 @enderror" name="prod_precio" value="{{ old('prod_precio') }}" required autocomplete="prod_precio" autofocus>
                                     @error('prod_precio')
                                         <span class="invalid-feedback" role="alert">

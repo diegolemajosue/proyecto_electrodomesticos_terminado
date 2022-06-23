@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User; 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsuariosController extends Controller
 {
@@ -92,7 +93,18 @@ class UsuariosController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
-        return redirect(route('usuarios'));
+        
+        $auth=Auth::user()->use_id;
+        // dd($auth);
+        if($auth==$id){
+            $msg="No se puede eliminar porque esta en uso";
+         $users=User::all();
+
+            return view('usuarios.index')->with('msg',$msg)->with('users',$users);
+        }else{
+
+            User::destroy($id);
+            return redirect(route('usuarios'));
+        }
     }
 }

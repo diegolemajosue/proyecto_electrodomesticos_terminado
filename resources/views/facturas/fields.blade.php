@@ -107,7 +107,7 @@ if(isset($factura)){
             
 			<td>
 				<input type="hidden" id="fac_id" name="fac_id" value="{{$fac_id}}" />
-				<input type="number" min="0" name="fad_cantidad" id="fad_cantidad" class="form-control">
+				<input type="number" min="1" name="fad_cantidad" id="fad_cantidad" class="form-control">
 
 			</td>
 			<td>

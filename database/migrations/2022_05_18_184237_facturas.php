@@ -21,6 +21,7 @@ class Facturas extends Migration
             
             $table->date('fac_fecha');
             $table->float('fac_total');
+            $table->integer('fac_estado')->default(1);//1 activo //2 inactivo
             
             $table->string('fac_tipo_pago');///Trasferencia Efectivo Tarjeta
             
